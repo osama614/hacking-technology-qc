@@ -86,19 +86,22 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
           }
         </div>
         <hr />
-        {<SocialIconsGroup />}
-        <div className="similar-blogs mt-4">
-          <h3 className="mb-4">مدونات ذات صلة</h3>
-          {similarBlogs.map((blog) => (
-            <BlogCard
-              key={blog.id}
-              blog={blog}
-              category={categories.filter(
-                (category) => category.id === blog.category
-              )[0]}
-            />
-          ))}
-        </div>
+        <SocialIconsGroup />
+        {
+          similarBlogs.length > 0 &&
+          <div className="similar-blogs mt-4">
+            <h3 className="mb-4">مدونات ذات صلة</h3>
+            {similarBlogs.map((blog) => (
+              <BlogCard
+                key={blog.id}
+                blog={blog}
+                category={categories.filter(
+                  (category) => category.id === blog.category
+                )[0]}
+              />
+            ))}
+          </div>
+        }
       </div>
     )
   );
