@@ -78,6 +78,13 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
         <div className="body mb-4">
           <Markup content={blog.body} />
         </div>
+        <div className="blog-tags">
+          {
+            blog.tags.map((tag)=>(
+              <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">{tag}</span>
+            ))
+          }
+        </div>
         <hr />
         {<SocialIconsGroup />}
         <div className="similar-blogs mt-4">
