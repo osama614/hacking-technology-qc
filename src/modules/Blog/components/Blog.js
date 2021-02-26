@@ -67,10 +67,10 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
           <p>{formatDate(blog.created)}</p>
         </div>
         <SocialIconsGroup classNames="text-center" />
-        <div className="cover my-4 p-4">
+        <div className="blog-cover-container my-4 p-4">
           <img
             src={blog.cover ? baseUrl + blog.cover : ""}
-            className="card-img"
+            className="card-img cover"
             alt="blog cover"
             loading="lazy"
           />
@@ -88,7 +88,7 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
               blog={blog}
               category={categories.filter(
                 (category) => category.id === blog.category
-              )}
+              )[0]}
             />
           ))}
         </div>

@@ -30,9 +30,10 @@ const BlogCard = ({ blog, category }) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h6 className="card-subtitle mb-2">{category.title}</h6>
-
-            <h5 className="card-title">{blog.title}</h5>
+            <h6 className="card-subtitle mb-2">{category?.title}</h6>
+            <Link className="blog-card-title" to={`/${blog.id}`}>
+              <h5 className="card-title" >{blog.title}</h5>
+            </Link>
             <p className="card-text">{getSubContent(blog.body)} ...</p>
             <div className="d-flex w-100 justify-content-between">
               <p className="card-text">

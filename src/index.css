@@ -188,7 +188,7 @@ a:visited {
   background: transparent;
   color: #fff;
   opacity: 0.7;
-  margin: 5% auto;
+  margin: 10% auto;
 }
 
 .filters-title {
@@ -219,4 +219,30 @@ a:visited {
   margin-top: 80px;
   color: var(--lightGreen);
   font-size: 42px;
+}
+
+.blog-container .cover{
+  width: 655px !important;
+  height: 335px;
+  display: block;
+  margin: auto;
+}
+
+pre{
+  text-align: left;
+  direction: ltr;
+  background-color: #08090a !important;
+  border: 1px solid #08090a !important;
+  border-radius: 10px;
+  padding: 24px !important;
+  color: inherit !important;
+}
+
+.blog-card-title{
+  color: var(--white);
+}
+
+.blog-card-title:hover{
+  color: var(--lightGreen);
+  text-decoration: none !important;
 }

@@ -52,7 +52,7 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
             blog={currentBlog}
             category={categories.filter(
               (category) => category.id === currentBlog.category
-            )}
+            )[0]}
           />
         ) : null}
       </div>

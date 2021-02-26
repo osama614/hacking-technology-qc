@@ -6,7 +6,7 @@ import Pagination from "./layout/Pagination";
 
 const BlogsList = ({ categories, blogsList }) => {
 
-  const perPage = 1;
+  const perPage = 5;
   const [pageCount, setPageCount] = useState(1);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   const [currentPageBlogs, setCurrentPageBlogs] = useState([]);
@@ -95,7 +95,7 @@ const BlogsList = ({ categories, blogsList }) => {
                 blog={blog}
                 category={categories.filter(
                   (category) => category.id === blog.category
-                )}
+                )[0]}
               />
             ))
           ) : (
