@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
+
 :root {
   --lightGreen: #08cc96;
   --white: #ffffff;
@@ -10,7 +13,7 @@ body {
 
 body {
   margin: 0;
-  font-family: system-ui;
+  font-family: Cairo;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: right;
@@ -254,7 +257,7 @@ pre{
 .blog-tag{
   background-color: var(--lightGreen);
   color: var(--white);
-  padding: 5px;
+  padding: 1px 5px;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
