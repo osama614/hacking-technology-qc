@@ -168,18 +168,21 @@ a:visited {
   background-color: #313131;
 }
 
-.categories-filters input {
+.categories-filters input,
+.sort-options input {
   display: none;
 }
 
-.categories-filters label {
+.categories-filters label,
+.sort-options label {
   cursor: pointer;
   opacity: 0.7;
   white-space: nowrap;
   margin: 3px 0;
 }
 
-.categories-filters input.checked + label {
+.categories-filters input.checked + label,
+.sort-options input.checked + label {
   opacity: 1;
   border-bottom: 2px solid;
 }
@@ -191,7 +194,8 @@ a:visited {
   margin: 10% auto;
 }
 
-.filters-title {
+.filters-title,
+.sort-title {
   color: var(--lightGreen);
   font-size: 25px;
 }
