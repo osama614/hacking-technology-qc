@@ -38,7 +38,7 @@ const BlogCard = ({ blog, category }) => {
             <div className="d-flex w-100 justify-content-between">
               <p className="card-text">
                 <small className="text-white-50">
-                  {formatDate(blog.created)}
+                  {formatDate(blog.publish)}
                 </small>
               </p>
               <Link to={`/${blog.id}`}>

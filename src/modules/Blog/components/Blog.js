@@ -64,7 +64,7 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
           <h2>{blog.title}</h2>
         </div>
         <div className="date text-center">
-          <p>{formatDate(blog.created)}</p>
+          <p>{formatDate(blog.publish)}</p>
         </div>
         <SocialIconsGroup classNames="text-center" />
         <div className="blog-cover-container my-4 p-4">
