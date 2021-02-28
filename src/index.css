@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Cairo');
-
+@import url("https://fonts.googleapis.com/css?family=Cairo");
 
 :root {
   --lightGreen: #08cc96;
   --white: #ffffff;
   --gray: #707070;
-}
-
-body {
-  height: 100%;
 }
 
 body {
@@ -109,9 +104,7 @@ a:visited {
 }
 
 .sidenav {
-  width: 15%;
   position: relative;
-  z-index: 1;
   top: 20px;
   left: 10px;
   overflow-x: hidden;
@@ -131,8 +124,6 @@ a:visited {
 }
 
 .main {
-  width: 80%;
-  padding: 0 30px 0 0;
   margin-top: 30px;
 }
 
@@ -165,10 +156,12 @@ a:visited {
 }
 
 .copyright {
-  padding: 5px;
-  margin: 40px 0 0;
+  padding: 5px 0 0;
+  margin: 5px 0 0;
   color: #fff;
   background-color: #313131;
+  bottom: 0;
+  width: 100%;
 }
 
 .categories-filters input,
@@ -228,14 +221,14 @@ a:visited {
   font-size: 42px;
 }
 
-.blog-container .cover{
-  width: 655px !important;
-  height: 335px;
+.blog-container .cover {
+  width: 63.5% !important;
+  height: 100%;
   display: block;
   margin: auto;
 }
 
-pre{
+pre {
   text-align: left;
   direction: ltr;
   background-color: #08090a !important;
@@ -245,20 +238,69 @@ pre{
   color: inherit !important;
 }
 
-.blog-card-title{
+.blog-card-title {
   color: var(--white);
 }
 
-.blog-card-title:hover{
+.blog-card-title:hover {
   color: var(--lightGreen);
   text-decoration: none !important;
 }
 
-.blog-tag{
+.blog-tag {
   background-color: var(--lightGreen);
   color: var(--white);
   padding: 1px 5px;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+}
+
+.privacy-terms a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.privacy-terms a:hover {
+  color: var(--lightGreen);
+}
+
+.about-us,
+.privacy-policy,
+.terms-of-use {
+  padding: 35px 65px;
+  margin: 0 auto 10%;
+  border-radius: 5px;
+  background: #08090a;
+  color: var(--lightGreen);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  overflow-wrap: anywhere;
+}
+
+a.privacy-policy-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact-us-form {
+  margin: 0px auto 90px;
+}
+
+.contact-us-form label {
+  color: var(--lightGreen);
+}
+
+.contact-us-form input {
+  border-color: var(--lightGreen);
+}
+
+.contact-us-form .btn-success,
+.contact-us-form .btn-success:hover {
+  background-color: var(--lightGreen);
+}
+
+.footer {
+  background-color: #161616;
+  padding: 32px 0;
 }

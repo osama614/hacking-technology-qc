@@ -66,24 +66,24 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
         <div className="date text-center">
           <p>{formatDate(blog.publish)}</p>
         </div>
+        <div className="blog-tags my-4 text-center">
+          {
+            blog.tags.map((tag)=>(
+              <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">{tag}</span>
+            ))
+          }
+        </div>
         <SocialIconsGroup classNames="text-center" />
         <div className="blog-cover-container my-4 p-4">
           <img
             src={blog.cover ? baseUrl + blog.cover : ""}
-            className="card-img cover"
+            className="card-img cover img-fluid"
             alt="blog cover"
             loading="lazy"
           />
         </div>
         <div className="body mb-4">
           <Markup content={blog.body} />
-        </div>
-        <div className="blog-tags">
-          {
-            blog.tags.map((tag)=>(
-              <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">{tag}</span>
-            ))
-          }
         </div>
         <hr />
         <SocialIconsGroup />

@@ -11,26 +11,26 @@ const BlogCard = ({ blog, category }) => {
   const getSubContent = (body) => {
     const contentArray = body.split(">");
     const subContentArray = contentArray[1].split("<");
-    const subContent = subContentArray[0].slice(0, 200);
+    const subContent = subContentArray[0].slice(0, 100);
     return subContent;
   };
 
   return blog ? (
-    <div className="blog-card mb-3" style={{ maxWidth: 1100, maxHeight: 232 }}>
+    <div className="blog-card mb-3" style={{ maxWidth: 1100 }}>
       <div className="row no-gutters">
         <div className="col-md-4">
           <img
             src={blog.cover ? baseUrl + blog.cover : ""}
             className="card-img"
             width="348"
-            height="232"
+            height="100%"
             alt="blog cover"
             loading="lazy"
           />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 py-3">
           <div className="card-body">
-            <h6 className="card-subtitle mb-2">{category?.title}</h6>
+            <h6 className="card-subtitle pb-4">{category?.title}</h6>
             <Link className="blog-card-title" to={`/${blog.id}`}>
               <h5 className="card-title" >{blog.title}</h5>
             </Link>

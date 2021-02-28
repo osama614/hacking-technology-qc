@@ -53,15 +53,15 @@ const BlogsList = ({ categories, blogsList }) => {
   };
 
   return (
-    <div className="blogs-list">
+    <div className="blogs-list mb-4">
       <div className="blogs-list-title mb-4 text-center">
         <h2>{
         currentSort === 0? 
         "أحدث المدونات"
         :"أقدم المدونات"}</h2>
       </div>
-      <div className="blogs-list-body d-flex">
-        <div className="sidenav">
+      <div className="blogs-list-body row">
+        <div className="sidenav col-md-2">
           <p className="filters-title">فلترة بحسب الفئة</p>
           <div className="form-group row categories-filters">
             <div className="col-sm-10">
@@ -141,7 +141,7 @@ const BlogsList = ({ categories, blogsList }) => {
             </div>
         </div>
         </div>
-        <div className="main">
+        <div className="main p-0 col-md-10">
           {sortedBlogs.length > 0 ? (
             currentPageBlogs.length > 0 &&
             currentPageBlogs.map((blog) => (
