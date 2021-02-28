@@ -19,7 +19,7 @@ const Footer = () => {
                 <h5 style={{ color: "rgb(243, 247, 253)" }}>
                   Hacking Technology
                 </h5>
-                <p className="p-small py-3">
+                <p className="p-medium py-3">
                   شركة{" "}
                   <strong style={{ color: "#08cc96" }}>
                     Hacking Technology
@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="col-md-4">
               <div className="footer-col first">
                 <h5 style={{ color: "rgb(243, 247, 253)" }}>الاتصال بنا</h5>
-                <p className="p-small py-3">
+                <p className="p-medium py-3">
                   يمكنكم الاتصال بنا عند الحاجة من خلال الضغط على رابط اتصل بنا
                   المتوفر في روابط موقعنا أو الإرسال إلى بريدنا الالكتروني على
                   اسم النطاق أعلاه
@@ -44,7 +44,7 @@ const Footer = () => {
                 <h5 style={{ color: "rgb(243, 247, 253)" }}>
                   وسائل التواصل الاجتماعي
                 </h5>
-                <ul className="media-list li-space-lg p-small d-flex px-0 py-3">
+                <ul className="media-list li-space-lg p-medium d-flex px-0 py-3">
                   <li className="media">
                     <Link to="/">
                       <img src={FacebookLogo} alt="facebook logo" />
