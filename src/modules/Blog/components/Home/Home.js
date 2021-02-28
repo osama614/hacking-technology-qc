@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, withRouter, BrowserRouter } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -30,12 +30,10 @@ const Home = (props) => {
   );
 
   return (
-    <BrowserRouter>
       <div>
         <Navbar currentPathname={props.location.pathname} />
         <div className="container home">
           <Switch>
-            <Fragment>
               <Route
                 path={["/http:", "/https:"]}
                 component={(props) => {
@@ -49,12 +47,10 @@ const Home = (props) => {
               <Route path="/terms-of-use" component={TermsOfUse} />
               <Route path="/:id" component={Blog} />
               <Route exact path="/" component={homeContainer} />
-            </Fragment>
           </Switch>
         </div>
         <Footer />
       </div>
-    </BrowserRouter>
   );
 };
 
