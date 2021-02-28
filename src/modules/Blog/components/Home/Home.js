@@ -4,6 +4,7 @@ import { Switch, Route, withRouter } from "react-router-dom";
 
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
+import SocialMedia from "../layout/SocialMedia";
 import AboutUs from "../AboutUs";
 import ContactUs from "../ContactUs";
 import FeaturedBlogs from "./FeaturedBlogs";
@@ -49,6 +50,7 @@ const Home = (props) => {
               <Route exact path="/" component={homeContainer} />
           </Switch>
         </div>
+        <SocialMedia />
         <Footer />
       </div>
   );
