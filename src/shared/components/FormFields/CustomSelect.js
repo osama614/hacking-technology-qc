@@ -2,6 +2,14 @@ import React from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
 
+const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isFocused ? '#08cc96':'inherit',
+      color: '#fff',
+    })
+  }
+
 const CustomSelect = ({ id, placeholder, label, options, isClearable, isSearchable, classNames, value, error, onChange })=>{
     return(
         <div className={`${classNames? classNames:''}`}>
@@ -17,6 +25,7 @@ const CustomSelect = ({ id, placeholder, label, options, isClearable, isSearchab
                 isClearable={isClearable}
                 isSearchable={isSearchable}
                 hideSelectedOptions={true}
+                styles={customStyles}
             />
             <div className="invalid-feedback" style={{display: error? "block":"none"}}>
                 {error}
