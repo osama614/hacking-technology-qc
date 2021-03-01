@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, withRouter } from "react-router-dom";
+import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -11,6 +11,7 @@ import FeaturedBlogs from "./FeaturedBlogs";
 import BlogsList from "../BlogsList";
 import PrivacyPolicy from "../PrivacyPolicy";
 import TermsOfUse from "../TermsOfUse";
+import NotFound from "./../../../../shared/components/NotFound";
 
 import { handleGetCategories, handleGetBlogs } from "../../actions/index";
 import Blog from "../Blog";
@@ -35,19 +36,14 @@ const Home = (props) => {
         <Navbar currentPathname={props.location.pathname} />
         <div className="container home">
           <Switch>
-              <Route
-                path={["/http:", "/https:"]}
-                component={(props) => {
-                  window.location.replace(props.location.pathname.substr(1));
-                  return null;
-                }}
-              />
-              <Route path="/about-us" component={AboutUs} />
-              <Route path="/contact-us" component={ContactUs} />
-              <Route path="/privacy-policy" component={PrivacyPolicy} />
-              <Route path="/terms-of-use" component={TermsOfUse} />
-              <Route path="/:id" component={Blog} />
+              <Route path="/notfound" component={NotFound} />
+              <Route exact path="/about-us" component={AboutUs} />
+              <Route exact path="/contact-us" component={ContactUs} />
+              <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+              <Route exact path="/terms-of-use" component={TermsOfUse} />
+              <Route exact path="/:slug/:id" component={Blog} />
               <Route exact path="/" component={homeContainer} />
+              <Redirect to="/"/>
           </Switch>
         </div>
         <SocialMedia />
