@@ -5,12 +5,12 @@ import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import SocialMedia from "../layout/SocialMedia";
-import AboutUs from "../AboutUs";
+import AboutUs from "../../../../shared/components/StaticContent/AboutUs";
 import ContactUs from "../ContactUs";
 import FeaturedBlogs from "./FeaturedBlogs";
 import BlogsList from "../BlogsList";
-import PrivacyPolicy from "../PrivacyPolicy";
-import TermsOfUse from "../TermsOfUse";
+import PrivacyPolicy from "../../../../shared/components/StaticContent/PrivacyPolicy";
+import TermsOfUse from "../../../../shared/components/StaticContent/TermsOfUse";
 import NotFound from "./../../../../shared/components/NotFound";
 
 import { handleGetCategories, handleGetBlogs } from "../../actions/index";

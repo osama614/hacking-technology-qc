@@ -1,36 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import {
-  FacebookLogo,
-  TwitterLogo,
-  YouTubeLogo,
-  LinkedInLogo,
-} from "../../../../assets/index";
+import { FaTwitterSquare, FaSnapchatSquare, FaYoutube, FaTelegramPlane } from 'react-icons/fa';
 
 const SocialMedia = () => {
   return (
-    <ul className="media-list fixed-media li-space-lg p-medium px-0 py-3">
+    <ul className="media-list fixed-media li-space-lg p-medium px-2 py-3">
       <li className="media">
-        <Link to="/">
-          <img src={FacebookLogo} alt="facebook logo" />
-        </Link>
+        <a href="https://twitter.com/h2ckingtech/">
+          <FaTwitterSquare />
+        </a>
       </li>
       <li className="media">
-        <Link to="/">
-          <img src={TwitterLogo} alt="twitter logo" />
-        </Link>
-      </li>
-
-      <li className="media">
-        <Link to="/">
-          <img src={YouTubeLogo} alt="youtube logo" />
-        </Link>
+        <a href="https://www.snapchat.com/add/tzb">
+          <FaSnapchatSquare />
+        </a>
       </li>
       <li className="media">
-        <Link to="/">
-          <img src={LinkedInLogo} alt="linkedin logo" />
-        </Link>
+        <a href="https://www.youtube.com/channel/UC_nkNXJN-v5KXvig99sEBIw">
+          <FaYoutube />
+        </a>
+      </li>
+      <li className="media">
+        <a href="https://t.me/H2ckingTech">
+          <FaTelegramPlane />
+        </a>
       </li>
     </ul>
   );
