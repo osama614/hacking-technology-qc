@@ -196,7 +196,6 @@ p {
   width: 100%;
 }
 
-.categories-filters input,
 .sort-options input {
   display: none;
 }
@@ -207,13 +206,31 @@ p {
   opacity: 0.7;
   white-space: nowrap;
   margin: 3px 0;
+  color: var(--lightGreen);
 }
 
-.categories-filters input.checked + label,
-.sort-options input.checked + label {
-  opacity: 1;
-  border-bottom: 2px solid;
+.categories-filters .css-1uccc91-singleValue,
+.sort-options .css-1uccc91-singleValue{
+  color: var(--white);
 }
+
+.categories-filters .css-yk16xz-control,
+.categories-filters .css-1pahdxg-control,
+.categories-filters .css-26l3qy-menu,
+.sort-options .css-yk16xz-control,
+.sort-options .css-1pahdxg-control,
+.sort-options .css-26l3qy-menu{
+  background-color: #313131;
+}
+
+.categories-filters .css-1pahdxg-control,
+.categories-filters .css-1pahdxg-control:hover,
+.sort-options .css-1pahdxg-control,
+.sort-options .css-1pahdxg-control:hover {
+  border-color: var(--lightGreen);
+  box-shadow: 0 0 0 1px var(--lightGreen);
+}
+
 
 .blogs-list .alert {
   background: transparent;
