@@ -46,25 +46,25 @@ const Footer = () => {
                 </h5>
                 <ul className="media-list li-space-lg p-medium d-flex px-0 py-3">
                   <li className="media">
-                    <Link to="/">
+                    <a href="/">
                       <img src={FacebookLogo} alt="facebook logo" />
-                    </Link>
+                    </a>
                   </li>
                   <li className="media">
-                    <Link to="/">
+                    <a href="https://twitter.com/h2ckingtech/">
                       <img src={TwitterLogo} alt="twitter logo" />
-                    </Link>
+                    </a>
                   </li>
 
                   <li className="media">
-                    <Link to="/">
+                    <a href="https://www.youtube.com/channel/UC_nkNXJN-v5KXvig99sEBIw">
                       <img src={YouTubeLogo} alt="youtube logo" />
-                    </Link>
+                    </a>
                   </li>
                   <li className="media">
-                    <Link to="/">
+                    <a href="/">
                       <img src={LinkedInLogo} alt="linkedin logo" />
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
