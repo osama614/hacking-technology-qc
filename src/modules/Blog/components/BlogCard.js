@@ -19,6 +19,7 @@ const BlogCard = ({ blog, category }) => {
     <div className="blog-card mb-3" style={{ maxWidth: 1100 }}>
       <div className="row no-gutters">
         <div className="col-md-4">
+          <Link to={`/${blog.slug}/${blog.id}`}>
           <img
             src={blog.cover ? baseUrl + blog.cover : ""}
             className="card-img"
@@ -27,11 +28,12 @@ const BlogCard = ({ blog, category }) => {
             alt="blog cover"
             loading="lazy"
           />
+          </Link>
         </div>
         <div className="col-md-8 py-3">
           <div className="card-body">
             <h6 className="card-subtitle pb-4">{category?.title}</h6>
-            <Link className="blog-card-title" to={`/${blog.id}`}>
+            <Link className="blog-card-title" to={`/${blog.slug}/${blog.id}`}>
               <h5 className="card-title" >{blog.title}</h5>
             </Link>
             <p className="card-text">{getSubContent(blog.body)} ...</p>
@@ -41,7 +43,7 @@ const BlogCard = ({ blog, category }) => {
                   {formatDate(blog.publish)}
                 </small>
               </p>
-              <Link to={`/${blog.id}`}>
+              <Link to={`/${blog.slug}/${blog.id}`}>
                 <img src={LeftArrow} height={30} width={37} alt="arrow" loading="lazy" />
               </Link>
             </div>
