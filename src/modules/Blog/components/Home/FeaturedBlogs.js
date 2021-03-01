@@ -23,7 +23,7 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
 
   const slideSelectedBlog = (id) => {
     if (id !== currentIndicator) {
-      const selectedBlog = featuredBlogs.filter((blog) => blog.id === id);
+      const selectedBlog = featuredBlogs.filter((blog) => blog.id === id)[0];
       setCurrentIndicator(id);
       setCurrentBlog({ ...selectedBlog });
     }
