@@ -1,60 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
 import BlogCard from "../BlogCard";
 
 const FeaturedBlogs = ({ categories, featuredBlogs }) => {
-  
-  const [carouselIndicators, setCarouselIndicators] = useState([]);
-  const [currentIndicator, setCurrentIndicator] = useState(null);
-  const [currentBlog, setCurrentBlog] = useState(null);
+
+  const delay = 2500;
+
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
 
   useEffect(() => {
-    if (featuredBlogs.length > 0) {
-      setCurrentIndicator(featuredBlogs[0].id);
-      setCurrentBlog(featuredBlogs[0]);
-      const indicators = [];
-      for (let index = 0; index < featuredBlogs.length; index++) {
-        indicators.push({ id: featuredBlogs[index].id });
-      }
-      setCarouselIndicators([...indicators]);
-    }
-  }, [featuredBlogs]);
+    console.log(index);
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === featuredBlogs.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
 
-  const slideSelectedBlog = (id) => {
-    if (id !== currentIndicator) {
-      const selectedBlog = featuredBlogs.filter((blog) => blog.id === id)[0];
-      setCurrentIndicator(id);
-      setCurrentBlog({ ...selectedBlog });
-    }
-  };
+    return () => {
+      resetTimeout();
+    };
+  }, [index, featuredBlogs.length]);
 
   return (
-    <div className="featured-blogs carousel slide" data-ride="carousel">
-      <div className="carousel-title mb-4 text-center">
-        <h2>أبرز المدونات</h2>
-      </div>
-      <ol className="carousel-indicators">
-        {carouselIndicators.map((indicator) => (
-          <li
-            key={indicator.id}
-            data-slide-to={indicator.id}
-            className={`blogs-carousel-indicator ${
-              currentIndicator === indicator.id ? "active" : ""
-            }`}
-            onClick={() => slideSelectedBlog(indicator.id)}
-          />
-        ))}
-      </ol>
-      <div className="carousel-inner">
-        {currentBlog ? (
-          <BlogCard
+    <div className="featured-blogs carousel slideshow">
+         <div className="carousel-title mb-4 text-center">
+         <h2>أبرز المدونات</h2>
+       </div>
+      <div
+        className="slideshowSlider"
+        style={{ transform: `translate3d(${index * 100}%, 0, 0)` }}
+      >
+        {featuredBlogs.map((currentBlog, index) => (
+          <div className="slide carousel-inner" key={index}>
+            <BlogCard
             blog={currentBlog}
             category={categories.filter(
               (category) => category.id === currentBlog.category
             )[0]}
           />
-        ) : null}
+          </div>
+        ))}
+      </div>
+      <div className="slideshowDots">
+        {featuredBlogs.map((_, idx) => (
+          <div
+            key={idx}
+            className={`slideshowDot${index === idx ? " active" : ""}`}
+            onClick={() => {
+              setIndex(idx);
+            }}
+          ></div>
+        ))}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const Home = (props) => {
   return (
       <div>
         <Navbar currentPathname={props.location.pathname} />
-        <div className="container home">
+        <div className="container home px-0">
           <Switch>
               <Route path="/notfound" component={NotFound} />
               <Route exact path="/about-us" component={AboutUs} />

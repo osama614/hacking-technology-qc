@@ -30,7 +30,7 @@ const BlogCard = ({ blog, category }) => {
           />
           </Link>
         </div>
-        <div className="col-md-8 py-3">
+        <div className="col-md-8">
           <div className="card-body">
             <h6 className="card-subtitle pb-4">{category?.title}</h6>
             <Link className="blog-card-title" to={`/${blog.slug}/${blog.id}`}>
