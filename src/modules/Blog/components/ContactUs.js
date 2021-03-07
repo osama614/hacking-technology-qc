@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import Input from "../../../shared/components/FormFields/Input";
 import TextArea from "../../../shared/components/FormFields/TextArea";
@@ -6,17 +7,39 @@ import { contactUsSchema } from "../../../shared/schemas/contact-us-schema";
 import { validateInput, validateForm } from "../../../shared/utils/validation";
 import { contactUs } from "../../../api/ContactUsApi";
 
+import { BLOG_APP_CAPTCHA_KEY } from "../../../shared/constants/constants";
+
+const DELAY = 1500;
+
 class ContactUs extends Component {
+
+  constructor(props, ...args) {
+    super(props, ...args);
+    this._reCaptchaRef = React.createRef();
+  }
+
   state = {
     contactInfo: {
       email: "",
       subject: "",
+      name: "",
       message: "",
     },
     errors: {},
     successAlert: false,
     errorAlert: false,
+    callback: "not fired",
+    value: "[empty]",
+    load: false,
+    expired: "false"
   };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ load: true });
+    }, DELAY);
+    console.log("didMount - reCaptcha Ref-", this._reCaptchaRef);
+  }
 
   onChange = (e) => {
     const id = e.target.id;
@@ -68,20 +91,28 @@ class ContactUs extends Component {
     });
   };
 
+  // recaptcha
+
+  onRecaptchaChange = value => {
+    console.log("Captcha value:", value);
+    this.setState({ value });
+    // if value is null recaptcha expired
+    if (value === null) this.setState({ expired: "true" });
+  };
+
+  asyncScriptOnLoad = () => {
+    this.setState({ callback: "called!" });
+    console.log("scriptLoad - reCaptcha Ref-", this._reCaptchaRef);
+  };
+
   render() {
     return (
       <div className="contact-us-form col-lg-6">
-        <div
-          className="invalid-feedback general-error"
-          style={{ display: this.state.generalError ? "block" : "none" }}
-        >
-          {this.state.generalError}
-        </div>
         <div className="form-row">
           <Input
             type="text"
             id="subject"
-            classNames="col-md-6"
+            classNames="col"
             label="الموضوع"
             value={this.state.contactInfo.subject}
             error={this.state.errors.subject}
@@ -90,9 +121,20 @@ class ContactUs extends Component {
         </div>
         <div className="form-row">
           <Input
+            type="text"
+            id="name"
+            classNames="col"
+            label="الاسم"
+            value={this.state.contactInfo.name}
+            error={this.state.errors.name}
+            onChange={this.onChange}
+          />
+        </div>
+        <div className="form-row">
+          <Input
             type="email"
             id="email"
-            classNames="col-md-6"
+            classNames="col"
             label="البريد الإلكتروني"
             value={this.state.contactInfo.email}
             error={this.state.errors.email}
@@ -107,13 +149,24 @@ class ContactUs extends Component {
           error={this.state.errors.message}
           onChange={this.onChange}
         />
-        <button
-          className="btn btn-success float-right mt-2 mb-1"
-          onClick={this.sendMessage}
-        >
-          إرسال
-        </button>
-
+        <div className="form-row">
+          <div className="col-md-5">
+          <button
+            className="btn btn-success mt-2 mb-1"
+            onClick={this.sendMessage}
+          >
+            إرسال
+          </button>
+</div>
+        <ReCAPTCHA
+          theme="dark"
+          className="blog-recaptcha col-md-7"
+          ref={this._reCaptchaRef}
+          sitekey={BLOG_APP_CAPTCHA_KEY}
+          onChange={this.onRecaptchaChange}
+          asyncScriptOnLoad={this.asyncScriptOnLoad}
+        />
+        </div>
         {this.state.successAlert && (
           <div
             class="alert alert-success alert-dismissible fade show"
