@@ -81,7 +81,7 @@ class ContactUs extends Component {
       return;
     }
 
-    if (!this.state.recaptchaValue || this.state.expired) {
+    if (!this.state.recaptchaValue) {
       return;
     }
 
