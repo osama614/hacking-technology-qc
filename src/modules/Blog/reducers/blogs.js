@@ -1,4 +1,10 @@
-import { GET_CATEGORIES, GET_BLOGS, GET_BLOG } from "../actions/types";
+import {
+  GET_CATEGORIES,
+  GET_BLOGS,
+  GET_BLOG,
+  GET_HOME_ADS,
+  GET_BLOG_AD,
+} from "../actions/types";
 
 const initialState = {
   categories: [],
@@ -22,6 +28,16 @@ export default function blogs(state = initialState, action) {
       return {
         ...state,
         blog: { ...action.blog },
+      };
+    case GET_HOME_ADS:
+      return {
+        ...state,
+        homeAds: [...action.homeAds],
+      };
+    case GET_BLOG_AD:
+      return {
+        ...state,
+        blogAd: { ...action.blogAd },
       };
     default:
       return state;
