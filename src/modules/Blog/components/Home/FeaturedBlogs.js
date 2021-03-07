@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
-import BlogCard from "../BlogCard";
+import BlogCard from "../Blog/BlogCard";
 
 const FeaturedBlogs = ({ categories, featuredBlogs }) => {
-
   const delay = 2500;
 
   const [index, setIndex] = useState(0);
@@ -17,7 +16,6 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
   }
 
   useEffect(() => {
-    console.log(index);
     resetTimeout();
     timeoutRef.current = setTimeout(
       () =>
@@ -34,9 +32,9 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
 
   return (
     <div className="featured-blogs carousel slideshow">
-         <div className="carousel-title mb-4 text-center">
-         <h2>أبرز المدونات</h2>
-       </div>
+      <div className="carousel-title mb-4 text-center">
+        <h2>أبرز المدونات</h2>
+      </div>
       <div
         className="slideshowSlider"
         style={{ transform: `translate3d(${index * 100}%, 0, 0)` }}
@@ -44,11 +42,13 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
         {featuredBlogs.map((currentBlog, index) => (
           <div className="slide carousel-inner" key={index}>
             <BlogCard
-            blog={currentBlog}
-            category={categories.filter(
-              (category) => category.id === currentBlog.category
-            )[0]}
-          />
+              blog={currentBlog}
+              category={
+                categories.filter(
+                  (category) => category.id === currentBlog.category
+                )[0]
+              }
+            />
           </div>
         ))}
       </div>

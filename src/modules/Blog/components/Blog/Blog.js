@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { Markup } from "interweave";
 
 import BlogCard from "./BlogCard";
-import SocialIcon from "../../../shared/components/SocialIcon";
+import AdsBanner from "./AdBanner";
+import SocialIcon from "../../../../shared/components/SocialIcon";
 
-import { baseUrl } from "../../../api/Constants";
-import { handleGetBlog } from "../actions/index";
-import { formatDate } from "../../../shared/utils/helpers";
+import { baseUrl } from "../../../../api/Constants";
+import { handleGetBlog, handleGetBlogAd } from "../../actions/index";
+import { formatDate } from "../../../../shared/utils/helpers";
 
-import { TelegramIcon, TwitterIcon, FacebookIcon } from "../../../assets/index";
+import { TelegramIcon, TwitterIcon, FacebookIcon } from "../../../../assets/index";
 
-const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
+const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
   const [blogFullPath, setBlogFullPath] = useState("");
 
   useEffect(() => {
@@ -19,6 +20,7 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
     if (id) {
       setBlogFullPath(window.location.href);
       dispatch(handleGetBlog(id));
+      dispatch(handleGetBlogAd());
     }
   }, [match.params.id]);
 
@@ -27,7 +29,7 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
       const images = document.querySelectorAll(".body img");
       images.forEach((img) => {
         let imageSrc = img.getAttribute("src");
-        const srcStart =  imageSrc.indexOf("/media");
+        const srcStart = imageSrc.indexOf("/media");
         imageSrc = imageSrc.slice(srcStart);
         img.src = baseUrl + imageSrc;
       });
@@ -79,29 +81,31 @@ const Blog = ({ blog, similarBlogs, categories, dispatch, match }) => {
           <Markup content={blog.body} />
         </div>
         <div className="blog-tags my-4">
-          {
-            blog.tags.map((tag)=>(
-              <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">{tag}</span>
-            ))
-          }
+          {blog.tags.map((tag) => (
+            <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">
+              {tag}
+            </span>
+          ))}
         </div>
         <hr />
         <SocialIconsGroup />
-        {
-          similarBlogs.length > 0 &&
+        {blogAd && <AdsBanner />}
+        {similarBlogs.length > 0 && (
           <div className="similar-blogs mt-4">
             <h3 className="mb-4">مدونات ذات صلة</h3>
             {similarBlogs.map((blog) => (
               <BlogCard
                 key={blog.id}
                 blog={blog}
-                category={categories.filter(
-                  (category) => category.id === blog.category
-                )[0]}
+                category={
+                  categories.filter(
+                    (category) => category.id === blog.category
+                  )[0]
+                }
               />
             ))}
           </div>
-        }
+        )}
       </div>
     )
   );
@@ -112,6 +116,7 @@ const mapStateToProps = ({ blogs }) => {
   return {
     categories: blogs.categories,
     blog: blog ? blog.post : null,
+    blogAd: blogs.blogAd ? blogs.blogAd : null,
     similarBlogs: blog?.similar_posts.length > 0 ? [...blog.similar_posts] : [],
   };
 };

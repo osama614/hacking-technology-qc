@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { baseUrl } from "../../../api/Constants";
-import { formatDate } from "../../../shared/utils/helpers";
+import { baseUrl } from "../../../../api/Constants";
+import { formatDate } from "../../../../shared/utils/helpers";
 
-import { LeftArrow } from "../../../assets/index";
+import { LeftArrow } from "../../../../assets/index";
 
 const BlogCard = ({ blog, category }) => {
   

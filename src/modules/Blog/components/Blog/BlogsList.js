@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
-import CustomSelect from "../../../shared/components/FormFields/CustomSelect";
+import CustomSelect from "../../../../shared/components/FormFields/CustomSelect";
 import BlogCard from "./BlogCard";
-import Pagination from "./layout/Pagination";
+import Pagination from "../layout/Pagination";
 
 const BlogsList = ({ categories, blogsList }) => {
   const perPage = 5;
@@ -16,7 +16,11 @@ const BlogsList = ({ categories, blogsList }) => {
   const [sortedBlogs, setSortedBlogs] = useState([]);
   const [currentPageBlogs, setCurrentPageBlogs] = useState([]);
   const [currentFilter, setCurrentFilter] = useState(null);
-  const [currentSort, setCurrentSort] = useState({ id: 0, label: "الأحدث", value: "الأحدث" });
+  const [currentSort, setCurrentSort] = useState({
+    id: 0,
+    label: "الأحدث",
+    value: "الأحدث",
+  });
 
   useEffect(() => {
     let sortedBlogs = [...blogsList];
@@ -72,7 +76,7 @@ const BlogsList = ({ categories, blogsList }) => {
   return (
     <div className="blogs-list mb-4">
       <div className="blogs-list-title mb-4 text-center">
-        <h2>{currentSort === 0 ? "أحدث المدونات" : "أقدم المدونات"}</h2>
+        <h2>{currentFilter ? currentFilter.label : "كل المدونات"}</h2>
       </div>
       <div className="blogs-list-body row">
         <div className="sidenav col-md-3">

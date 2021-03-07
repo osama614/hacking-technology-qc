@@ -4,6 +4,8 @@
   --lightGreen: #08cc96;
   --white: #ffffff;
   --gray: #707070;
+  --redDanger: #721c24;
+  --lightRed: #f8d7da;
 }
 
 body {
@@ -63,15 +65,15 @@ p {
   font-size: calc(0.5rem + 0.2vw);
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
   img{
     width: 100% !important;
   }
-}
+} */
 
 .media svg {
-  width: calc(0.5rem + 1vw);
-  height: calc(0.5rem + 1vw);
+  width: calc(1rem + 1vw);
+  height: calc(1rem + 1vw);
   color: var(--lightGreen);
   margin: 0 2px;
 }
@@ -89,12 +91,14 @@ p {
 
 .nav-item > .nav-link {
   color: var(--white) !important;
-  font-size: calc(1rem + 0.5vw);
+  font-size: calc(1rem + 0.2vw);
 }
 
 .nav-item.active > .nav-link {
   color: var(--lightGreen) !important;
   border-bottom: 2px solid var(--lightGreen) !important;
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
 }
 
 .blog-card {
@@ -111,7 +115,7 @@ p {
 }
 
 .featured-blogs {
-  margin: 0 0 102px 0;
+  margin: 0 0 50px 0;
   padding: 50px 0;
 }
 
@@ -121,8 +125,16 @@ p {
   background-color: #313131;
 }
 
+@media screen and (max-width: 450px) {
+  .featured-blogs,
+  .blogs-list {
+    margin: 20px;
+  }
+}
+
 .blogs-list {
   padding: 36px 53px;
+  margin-top: 50px;
 }
 
 .carousel-title h2,
@@ -136,8 +148,13 @@ p {
   background: transparent !important;
 }
 
+.carousel-inner .blog-card-title,
 .carousel-inner .card-text{
   white-space: break-spaces;
+}
+
+.card-text{
+  font-style: italic;
 }
 
 .container.home {
@@ -151,6 +168,7 @@ p {
   left: 10px;
   overflow-x: hidden;
   padding: 8px 0;
+  overflow: visible;
 }
 
 .sidenav a {
@@ -176,6 +194,10 @@ p {
   .sidenav a {
     font-size: calc(1rem + 0.7vw);
   }
+}
+
+.pagination{
+  padding: 0;
 }
 
 .pagination li {
@@ -257,6 +279,7 @@ p {
 .blog-container .title h2 {
   font-size: calc(1rem + 1vw);
   font-weight: 500;
+  color: var(--lightGreen);
 }
 
 .blog-container .date p {
@@ -367,7 +390,7 @@ a.privacy-policy-link {
 
 .fixed-media {
   position: fixed;
-  bottom: 380px;
+  bottom: 300px;
 }
 
 /* quote style */
@@ -466,3 +489,23 @@ blockquote:nth-of-type(even) footer:after {
   font-weight: bold;
 }
 
+.home-ad-container{
+  padding: 8px 0;
+  background-color: var(--lightGreen);
+  border-radius: 20px;
+  color: var(--white);
+  width: 80%;
+}
+
+.blog-ad-container{
+  padding: 8px 20px;
+  background-color: var(--lightRed);
+  border-radius: 20px;
+  color: var(--redDanger);
+  width: 60%;
+}
+
+.blog-recaptcha div,
+.blog-recaptcha iframe {
+  width: 100% !important;
+}
