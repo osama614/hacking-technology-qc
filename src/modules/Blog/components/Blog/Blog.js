@@ -82,7 +82,7 @@ const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
         </div>
         <div className="blog-tags my-4">
           {blog.tags.map((tag) => (
-            <span key={`${blog.id}-${tag}`} className="blog-tag mx-2">
+            <span key={`${blog.id}-${tag}`} className="blog-tag mx-1 my-2">
               {tag}
             </span>
           ))}
