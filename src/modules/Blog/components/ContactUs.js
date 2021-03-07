@@ -85,6 +85,8 @@ class ContactUs extends Component {
       return;
     }
 
+    console.log("blah");
+
     this.handleContactUs({ ...contactInfo });
   };
 
@@ -173,13 +175,13 @@ class ContactUs extends Component {
         </div>
         {this.state.successAlert && (
           <div
-            class="alert alert-success alert-dismissible fade show"
+          className="alert alert-success alert-dismissible fade show"
             role="alert"
           >
             تم إرسال الرسالة بنجاح! سوف نقوم بالرد عليك في أقرب وقت.
             <button
               type="button"
-              class="close"
+              className="close"
               data-dismiss="alert"
               aria-label="Close"
               onClick={this.dismiss}
@@ -191,13 +193,13 @@ class ContactUs extends Component {
 
         {this.state.errorAlert && (
           <div
-            class="alert alert-danger alert-dismissible fade show"
+          className="alert alert-danger alert-dismissible fade show"
             role="alert"
           >
             لم يتم إرسال الرسالة! برجاء المحاولة مرة آخرى.
             <button
               type="button"
-              class="close"
+              className="close"
               data-dismiss="alert"
               aria-label="Close"
               onClick={this.dismiss}
