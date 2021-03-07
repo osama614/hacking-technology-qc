@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTwitterSquare, FaSnapchatSquare, FaYoutube, FaTelegramPlane } from "react-icons/fa";
+import {
+  FaTwitterSquare,
+  FaSnapchatSquare,
+  FaYoutube,
+  FaTelegramPlane,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -25,7 +30,14 @@ const Footer = () => {
             </div>
             <div className="col-md-4">
               <div className="footer-col first">
-                <h5 style={{ color: "rgb(243, 247, 253)" }}>الاتصال بنا</h5>
+                <h5>
+                  <Link
+                    to="/contact-us"
+                    style={{ color: "rgb(243, 247, 253)" }}
+                  >
+                    الاتصال بنا
+                  </Link>
+                </h5>
                 <p className="p-medium py-3">
                   يمكنكم الاتصال بنا عند الحاجة من خلال الضغط على رابط اتصل بنا
                   المتوفر في روابط موقعنا أو الإرسال إلى بريدنا الالكتروني على
