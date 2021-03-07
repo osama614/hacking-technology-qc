@@ -43,7 +43,7 @@ const Home = (props) => {
               <Route exact path="/terms-of-use" component={TermsOfUse} />
               <Route exact path="/:slug/:id" component={Blog} />
               <Route exact path="/" component={homeContainer} />
-              <Redirect to="/"/>
+          <Redirect to="/notfound" />
           </Switch>
         </div>
         <SocialMedia />

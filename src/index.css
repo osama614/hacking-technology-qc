@@ -456,3 +456,13 @@ blockquote:nth-of-type(even) footer:after {
 .slideshowDot.active {
   opacity: 1;
 }
+
+
+.page-not-found p{
+  color: var(--lightGreen);
+  font-size: calc(1rem + 2vw);
+  position: relative;
+  top: -255px;
+  font-weight: bold;
+}
+
