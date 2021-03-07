@@ -1,1 +1,1 @@
-export const BLOG_APP_CAPTCHA_KEY = '6Lea4XUaAAAAAKw3Efs9fKeK--FQbMz0um6exlrA';
+export const BLOG_APP_CAPTCHA_KEY = '6Lf75XUaAAAAAFeN1osqhrQBWxHQRARdP0v4yNLh';
