@@ -29,7 +29,7 @@ class ContactUs extends Component {
     successAlert: false,
     errorAlert: false,
     callback: "not fired",
-    value: "[empty]",
+    recaptchaValue: null,
     load: false,
     expired: "false"
   };
@@ -81,6 +81,10 @@ class ContactUs extends Component {
       return;
     }
 
+    if (!this.state.recaptchaValue || this.state.expired) {
+      return;
+    }
+
     this.handleContactUs({ ...contactInfo });
   };
 
@@ -95,7 +99,7 @@ class ContactUs extends Component {
 
   onRecaptchaChange = value => {
     console.log("Captcha value:", value);
-    this.setState({ value });
+    this.setState({ recaptchaValue: value });
     // if value is null recaptcha expired
     if (value === null) this.setState({ expired: "true" });
   };
