@@ -38,7 +38,7 @@ const BlogCard = ({ blog, category }) => {
             </Link>
             <p className="card-text">{getSubContent(blog.body)} ...</p>
             <div className="d-flex w-100 justify-content-between">
-              <p className="card-text">
+              <p>
                 <small className="text-white-50">
                   {formatDate(blog.publish)}
                 </small>
