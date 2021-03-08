@@ -4,6 +4,7 @@ import { Switch, Route, withRouter, Redirect } from "react-router-dom";
 
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
+import ScrollToTop from "../../../../shared/components/ScrollToTop";
 import SocialMedia from "../layout/SocialMedia";
 import AboutUs from "../../../../shared/components/StaticContent/AboutUs";
 import ContactUs from "../ContactUs";
@@ -42,6 +43,7 @@ const Home = (props) => {
     <div>
       <Navbar currentPathname={props.location.pathname} />
       <div className="container home px-0">
+        <ScrollToTop/>
         <Switch>
           <Route path="/notfound" component={NotFound} />
           <Route exact path="/about-us" component={AboutUs} />
