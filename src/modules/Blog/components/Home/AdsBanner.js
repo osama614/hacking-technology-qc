@@ -42,7 +42,7 @@ const AdsBanner = ({ homeAds }) => {
     </div>
   ) : (
     <div className="home-ad-container text-center mx-auto">
-      <marquee behavior="scroll" direction="right">
+      <marquee behavior="scroll" direction="right" scrollamount="15">
         {homeAds.map((ad) => (
           <font key={ad.id} className="mb-0">
             {ad.news} ✤{" "}
