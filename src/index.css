@@ -515,3 +515,20 @@ blockquote:nth-of-type(even) footer:after {
 .blog-recaptcha iframe {
   width: 100% !important;
 }
+
+.featured-blogs .back-btn{
+  right: 0vw;
+}
+
+.featured-blogs .next-btn{
+  left: 0vw;
+}
+
+.featured-blogs .slider-arrow{
+  position: absolute;
+  font-size: calc(2rem + 0.5vw);
+  border: none;
+  color: var(--lightGreen);
+  background-color: transparent;
+  top: 12rem;
+}

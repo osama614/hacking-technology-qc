@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
-
+import {
+  FaAngleRight, FaAngleLeft
+} from "react-icons/fa";
 import BlogCard from "../Blog/BlogCard";
 
 const FeaturedBlogs = ({ categories, featuredBlogs }) => {
@@ -30,6 +32,18 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
     };
   }, [index, featuredBlogs.length]);
 
+  const slidePrev = () => {
+    setIndex((prevIndex) => (prevIndex === 0 ? 0 : prevIndex - 1));
+  };
+
+  const slideNext = () => {
+    setIndex((prevIndex) =>
+      prevIndex === featuredBlogs.length - 1
+        ? featuredBlogs.length - 1
+        : prevIndex + 1
+    );
+  };
+
   return (
     <div className="featured-blogs carousel slideshow">
       <div className="carousel-title mb-4 text-center">
@@ -52,6 +66,12 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
           </div>
         ))}
       </div>
+      <button onClick={slidePrev} className="back-btn slider-arrow" disabled={index === 0}>
+        <FaAngleRight/>
+      </button>
+      <button onClick={slideNext} className="next-btn slider-arrow" disabled={index === featuredBlogs.length - 1}>
+        <FaAngleLeft/>
+      </button>
       <div className="slideshowDots">
         {featuredBlogs.map((_, idx) => (
           <div
