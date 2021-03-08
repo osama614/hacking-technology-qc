@@ -158,20 +158,20 @@ class ContactUs extends Component {
         <div className="form-row">
         <ReCAPTCHA
           theme="dark"
-          className="blog-recaptcha col-md-7"
+          className="blog-recaptcha mr-1"
           ref={this._reCaptchaRef}
           sitekey={BLOG_APP_CAPTCHA_KEY}
           onChange={this.onRecaptchaChange}
           asyncScriptOnLoad={this.asyncScriptOnLoad}
         />
-        <div className="col-md-5">
+        </div>
+        <div className="form-row">
           <button
-            className="btn btn-success mt-2 mb-1 float-left"
+            className="btn btn-success mt-2 mb-1 mr-1"
             onClick={this.sendMessage}
           >
             إرسال
           </button>
-        </div>
         </div>
         {this.state.successAlert && (
           <div
