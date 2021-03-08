@@ -1,11 +1,14 @@
 import Joi from "joi";
 
+const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
 export const emailErrorMsg = "يجب إن يكون بريد إلكتروني صالح!";
-export const requiredErrorMsg = "!هذا الحقل مطلوب";
+export const requiredErrorMsg = "هذا الحقل مطلوب!";
 
 export const contactUsSchema = Joi.object({
   email: Joi.string()
-    .email({ minDomainSegments: 2, tlds: { allow: ["com", "net", "edu"] } })
+    .email({ tlds: { allow: ["com", "net", "edu"] } })
+    .message(emailErrorMsg)
+    .pattern(new RegExp(emailPattern))
     .message(emailErrorMsg)
     .required()
     .messages({
