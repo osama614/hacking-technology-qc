@@ -41,17 +41,14 @@ const AdsBanner = ({ homeAds }) => {
       <p className="mb-0">{urgentAd.news}</p>
     </div>
   ) : (
-    <div className="home-ad-container text-center mx-auto carousel slideshow">
-      <div
-        className="slideshowSlider"
-        style={{ transform: `translate3d(${index * 100}%, 0, 0)` }}
-      >
+    <div className="home-ad-container text-center mx-auto">
+      <marquee behavior="scroll" direction="right">
         {homeAds.map((ad) => (
-          <div className="slide carousel-inner" key={ad.id}>
-            <p className="mb-0">{ad.news}</p>
-          </div>
+          <font key={ad.id} className="mb-0">
+            {ad.news} ✤{" "}
+          </font>
         ))}
-      </div>
+      </marquee>
     </div>
   );
 };
