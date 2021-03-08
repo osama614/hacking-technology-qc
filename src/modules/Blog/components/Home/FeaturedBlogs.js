@@ -44,7 +44,7 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
     );
   };
 
-  return (
+  return featuredBlogs.length > 0? (
     <div className="featured-blogs carousel slideshow">
       <div className="carousel-title mb-4 text-center">
         <h2>أبرز المدونات</h2>
@@ -84,7 +84,8 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
         ))}
       </div>
     </div>
-  );
+  )
+  :null
 };
 
 const mapStateToProps = ({ blogs }) => {
