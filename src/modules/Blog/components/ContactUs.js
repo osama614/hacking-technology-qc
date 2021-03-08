@@ -156,14 +156,6 @@ class ContactUs extends Component {
           onChange={this.onChange}
         />
         <div className="form-row">
-          <div className="col-md-5">
-          <button
-            className="btn btn-success mt-2 mb-1"
-            onClick={this.sendMessage}
-          >
-            إرسال
-          </button>
-</div>
         <ReCAPTCHA
           theme="dark"
           className="blog-recaptcha col-md-7"
@@ -172,6 +164,14 @@ class ContactUs extends Component {
           onChange={this.onRecaptchaChange}
           asyncScriptOnLoad={this.asyncScriptOnLoad}
         />
+        <div className="col-md-5">
+          <button
+            className="btn btn-success mt-2 mb-1 float-left"
+            onClick={this.sendMessage}
+          >
+            إرسال
+          </button>
+        </div>
         </div>
         {this.state.successAlert && (
           <div
