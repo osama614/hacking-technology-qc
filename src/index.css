@@ -486,13 +486,31 @@ blockquote:nth-of-type(even) footer:after {
   opacity: 1;
 }
 
+.page-not-found{
+  position: relative;
+  text-align: center;
+}
 
 .page-not-found p{
   color: var(--lightGreen);
-  font-size: calc(1rem + 2vw);
-  position: relative;
-  top: -255px;
+  font-size: calc(1rem + 1vw);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  .page-not-found img{
+    width: 80%;
+  }
+  }
+
+@media screen and (max-width: 450px) {
+.page-not-found img{
+  width: 100%;
+}
 }
 
 .home-ad-container{
@@ -532,3 +550,42 @@ blockquote:nth-of-type(even) footer:after {
   background-color: transparent;
   top: 12rem;
 }
+
+.moving-text {
+  height: 25px;	
+  overflow: hidden;
+  position: relative;
+ }
+ .moving-text font {
+  position: absolute;
+  white-space: nowrap;
+  /* Starting position */
+  -moz-transform:translateX(0);
+  -webkit-transform:translateX(0);	
+  transform:translateX(0);
+  /* Apply animation to this element */	
+  -moz-animation: moving-text 30s linear infinite;
+  -webkit-animation: moving-text 30s linear infinite;
+  animation: moving-text 40s linear infinite;
+ }
+/* Move it (define the animation) */
+@-moz-keyframes moving-text {
+  0%   { -moz-transform: translateX(-100%); }
+  100% { -moz-transform: translateX(100%); }
+ }
+ @-webkit-keyframes moving-text {
+  0%   { -webkit-transform: translateX(-100%); }
+  100% { -webkit-transform: translateX(100%); }
+ }
+ @keyframes moving-text {
+  0%   { 
+  -moz-transform: translateX(-100%); /* Firefox bug fix */
+  -webkit-transform: translateX(-100%); /* Firefox bug fix */
+  transform: translateX(-100%); 		
+  }
+  100% { 
+  -moz-transform: translateX(100%); /* Firefox bug fix */
+  -webkit-transform: translateX(100%); /* Firefox bug fix */
+  transform: translateX(100%); 
+  }
+ }
