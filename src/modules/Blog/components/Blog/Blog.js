@@ -32,6 +32,19 @@ const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
         const srcStart = imageSrc.indexOf("/media");
         imageSrc = imageSrc.slice(srcStart);
         img.src = baseUrl + imageSrc;
+        img.onclick = function(){ 
+          if (img.style.transform === "scale(2)") {
+            img.style.transform = "scale(1)"; 
+            img.style.transition = "transform 0.25s ease"; 
+            img.style.display = "initial";
+            img.style.margin = "initial";
+            return
+          }
+          img.style.transform = "scale(2)"; 
+          img.style.transition = "transform 0.25s ease"; 
+          img.style.display = "block";
+          img.style.margin = "auto";
+        }; 
       });
     }
   }, [blog]);
