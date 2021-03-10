@@ -1,11 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaTwitterSquare,
   FaSnapchatSquare,
   FaYoutube,
   FaTelegramPlane,
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -15,14 +15,14 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="footer-col first">
-                <h5 style={{ color: "rgb(243, 247, 253)" }}>
+                <h5 style={{ color: 'rgb(243, 247, 253)' }}>
                   Hacking Technology
                 </h5>
                 <p className="p-medium py-3">
-                  شركة{" "}
-                  <strong style={{ color: "#08cc96" }}>
+                  شركة{' '}
+                  <strong style={{ color: '#08cc96' }}>
                     Hacking Technology
-                  </strong>{" "}
+                  </strong>{' '}
                   هي شركة عربية برؤية عالمية، تسعى لخلق فضاء الكتروني آمن، وجعل
                   الانترنت مكاناً أفضل.
                 </p>
@@ -33,7 +33,7 @@ const Footer = () => {
                 <h5>
                   <Link
                     to="/contact-us"
-                    style={{ color: "rgb(243, 247, 253)" }}
+                    style={{ color: 'rgb(243, 247, 253)' }}
                   >
                     الاتصال بنا
                   </Link>
@@ -47,10 +47,10 @@ const Footer = () => {
             </div>
             <div className="col-md-4">
               <div className="footer-col last">
-                <h5 style={{ color: "rgb(243, 247, 253)" }}>
+                <h5 style={{ color: 'rgb(243, 247, 253)' }}>
                   وسائل التواصل الاجتماعي
                 </h5>
-                <ul className="media-list li-space-lg p-medium d-flex px-0 py-3">
+                <ul className="media-list li-space-lg p-medium d-flex px-0 py-3 m-0">
                   <li className="media">
                     <a href="https://twitter.com/h2ckingtech/">
                       <FaTwitterSquare />

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cairo");
+@import url('https://fonts.googleapis.com/css?family=Cairo');
 
 :root {
   --lightGreen: #08cc96;
@@ -21,7 +21,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -67,7 +67,7 @@ p {
 }
 
 @media screen and (max-width: 450px) {
-  .blog-container .body img{
+  .blog-container .body img {
     width: 100% !important;
     transform: scale(1) !important;
   }
@@ -116,7 +116,7 @@ p {
   flex-direction: column;
 }
 
-.blog-card .card-text{
+.blog-card .card-text {
   font-size: calc(0.2rem + 0.7vw);
 }
 
@@ -155,11 +155,11 @@ p {
 }
 
 .carousel-inner .blog-card-title,
-.carousel-inner .card-text{
+.carousel-inner .card-text {
   white-space: break-spaces;
 }
 
-.card-text{
+.card-text {
   font-style: italic;
 }
 
@@ -202,7 +202,7 @@ p {
   }
 }
 
-.pagination{
+.pagination {
   padding: 0;
 }
 
@@ -282,7 +282,7 @@ p {
   font-size: calc(1rem + 1vw);
 }
 
-.blog-container img{
+.blog-container img {
   cursor: pointer;
   border-radius: 10px;
 }
@@ -367,9 +367,9 @@ pre {
   padding: 35px 65px;
   margin: 0 auto 10%;
   border-radius: 5px;
-  background: #08090a;
+  background: #3d3d3d;
   color: var(--lightGreen);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 1px #ffffff33;
   overflow-wrap: anywhere;
 }
 
@@ -422,8 +422,8 @@ blockquote p {
   font-size: 14pt;
   font-style: italic;
   line-height: 1.4;
-  font-family: "PT Serif", Cambria, "Hoefler Text", Utopia, "Liberation Serif",
-    "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+  font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif',
+    'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
 }
 blockquote footer {
   margin-top: 0.5em;
@@ -434,7 +434,7 @@ blockquote footer {
   font-style: italic;
 }
 blockquote footer:before {
-  content: "— ";
+  content: '— ';
 }
 blockquote:nth-of-type(even) {
   text-align: right;
@@ -445,12 +445,11 @@ blockquote:nth-of-type(even) footer {
   text-align: right;
 }
 blockquote:nth-of-type(even) footer:before {
-  content: "";
+  content: '';
 }
 blockquote:nth-of-type(even) footer:after {
-  content: " —";
+  content: ' —';
 }
-
 
 /* Slideshow */
 .slideshow {
@@ -492,12 +491,12 @@ blockquote:nth-of-type(even) footer:after {
   opacity: 1;
 }
 
-.page-not-found{
+.page-not-found {
   position: relative;
   text-align: center;
 }
 
-.page-not-found p{
+.page-not-found p {
   color: var(--lightGreen);
   font-size: calc(1rem + 1vw);
   position: absolute;
@@ -508,18 +507,18 @@ blockquote:nth-of-type(even) footer:after {
 }
 
 @media screen and (max-width: 800px) {
-  .page-not-found img{
+  .page-not-found img {
     width: 80%;
   }
-  }
+}
 
 @media screen and (max-width: 450px) {
-.page-not-found img{
-  width: 100%;
-}
+  .page-not-found img {
+    width: 100%;
+  }
 }
 
-.home-ad-container{
+.home-ad-container {
   padding: 8px 0;
   background-color: var(--lightGreen);
   border-radius: 20px;
@@ -527,7 +526,7 @@ blockquote:nth-of-type(even) footer:after {
   width: 80%;
 }
 
-.blog-ad-container{
+.blog-ad-container {
   padding: 8px 20px;
   background-color: var(--lightRed);
   border-radius: 20px;
@@ -540,15 +539,15 @@ blockquote:nth-of-type(even) footer:after {
   width: 100% !important;
 }
 
-.featured-blogs .back-btn{
+.featured-blogs .back-btn {
   right: 0vw;
 }
 
-.featured-blogs .next-btn{
+.featured-blogs .next-btn {
   left: 0vw;
 }
 
-.featured-blogs .slider-arrow{
+.featured-blogs .slider-arrow {
   position: absolute;
   font-size: calc(2rem + 0.5vw);
   border: none;
@@ -558,40 +557,48 @@ blockquote:nth-of-type(even) footer:after {
 }
 
 .moving-text {
-  height: 25px;	
+  height: 25px;
   overflow: hidden;
   position: relative;
- }
- .moving-text font {
+}
+.moving-text font {
   position: absolute;
   white-space: nowrap;
   /* Starting position */
-  -moz-transform:translateX(100%);
-  -webkit-transform:translateX(100%);	
-  transform:translateX(100%);
-  /* Apply animation to this element */	
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  /* Apply animation to this element */
   -moz-animation: moving-text 25s linear infinite;
   -webkit-animation: moving-text 25s linear infinite;
   animation: moving-text 25s linear infinite;
- }
+}
 /* Move it (define the animation) */
 @-moz-keyframes moving-text {
-  0%   { -moz-transform: translateX(-10%); }
-  100% { -moz-transform: translateX(100%); }
- }
- @-webkit-keyframes moving-text {
-  0%   { -webkit-transform: translateX(-10%); }
-  100% { -webkit-transform: translateX(100%); }
- }
- @keyframes moving-text {
-  0%   { 
-  -moz-transform: translateX(-10%); /* Firefox bug fix */
-  -webkit-transform: translateX(-10%); /* Firefox bug fix */
-  transform: translateX(-10%); 		
+  0% {
+    -moz-transform: translateX(-10%);
   }
-  100% { 
-  -moz-transform: translateX(100%); /* Firefox bug fix */
-  -webkit-transform: translateX(100%); /* Firefox bug fix */
-  transform: translateX(100%); 
+  100% {
+    -moz-transform: translateX(100%);
   }
- }
+}
+@-webkit-keyframes moving-text {
+  0% {
+    -webkit-transform: translateX(-10%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+  }
+}
+@keyframes moving-text {
+  0% {
+    -moz-transform: translateX(-10%); /* Firefox bug fix */
+    -webkit-transform: translateX(-10%); /* Firefox bug fix */
+    transform: translateX(-10%);
+  }
+  100% {
+    -moz-transform: translateX(100%); /* Firefox bug fix */
+    -webkit-transform: translateX(100%); /* Firefox bug fix */
+    transform: translateX(100%);
+  }
+}

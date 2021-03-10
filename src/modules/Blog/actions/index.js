@@ -4,13 +4,13 @@ import {
   GET_BLOG,
   GET_HOME_ADS,
   GET_BLOG_AD,
-} from "./types";
+} from './types';
 import {
   getCategoriesList,
   getBlogsList,
   getBlogDetails,
-} from "../../../api/BlogsApi";
-import { getAllHomeAds, getSharedAd } from "../../../api/AdsApi";
+} from '../../../api/BlogsApi';
+import { getAllHomeAds, getSharedAd } from '../../../api/AdsApi';
 // import { showLoading, hideLoading } from "react-redux-loading";
 
 export function getCategories(categories) {

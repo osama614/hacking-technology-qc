@@ -4,7 +4,7 @@ import {
   GET_BLOG,
   GET_HOME_ADS,
   GET_BLOG_AD,
-} from "../actions/types";
+} from '../actions/types';
 
 const initialState = {
   categories: [],
