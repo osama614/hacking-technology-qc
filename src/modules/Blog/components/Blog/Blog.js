@@ -79,53 +79,55 @@ const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
 
   return (
     blog !== null && (
-      <div className="container blog-container">
-        <div className="title text-center">
-          <h2>{blog.title}</h2>
-        </div>
-        <div className="date text-center">
-          <p>{formatDate(blog.publish)}</p>
-        </div>
-        <SocialIconsGroup classNames="text-center" />
-        <div className="blog-cover-container my-4 p-4">
-          <img
-            src={blog.cover ? baseUrl + blog.cover : ''}
-            className="card-img cover img-fluid"
-            alt="blog cover"
-            loading="lazy"
-          />
-        </div>
-        <div className="body mb-4">
-          <Markup content={blog.body} />
-        </div>
-        <div className="blog-tags my-4">
-          {blog.tags.map((tag) => (
-            <Link to={`/tags/${tag}`} key={`${blog.id}-${tag}`}>
-              <span key={`${blog.id}-${tag}`} className="blog-tag mx-1 my-2">
-                {tag}
-              </span>
-            </Link>
-          ))}
-        </div>
-        <hr />
-        <SocialIconsGroup />
-        {blogAd && <AdsBanner />}
-        {similarBlogs.length > 0 && (
-          <div className="similar-blogs mt-4">
-            <h3 className="mb-4">مدونات ذات صلة</h3>
-            {similarBlogs.map((blog) => (
-              <BlogCard
-                key={blog.id}
-                blog={blog}
-                category={
-                  categories.filter(
-                    (category) => category.id === blog.category
-                  )[0]
-                }
-              />
+      <div className="container home px-0">
+        <div className="container blog-container">
+          <div className="title text-center">
+            <h2>{blog.title}</h2>
+          </div>
+          <div className="date text-center">
+            <p>{formatDate(blog.publish)}</p>
+          </div>
+          <SocialIconsGroup classNames="text-center" />
+          <div className="blog-cover-container my-4 p-4">
+            <img
+              src={blog.cover ? baseUrl + blog.cover : ''}
+              className="card-img cover img-fluid"
+              alt="blog cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="body mb-4">
+            <Markup content={blog.body} />
+          </div>
+          <div className="blog-tags my-4">
+            {blog.tags.map((tag) => (
+              <Link to={`/tags/${tag}`} key={`${blog.id}-${tag}`}>
+                <span key={`${blog.id}-${tag}`} className="blog-tag mx-1 my-2">
+                  {tag}
+                </span>
+              </Link>
             ))}
           </div>
-        )}
+          <hr />
+          <SocialIconsGroup />
+          {blogAd && <AdsBanner />}
+          {similarBlogs.length > 0 && (
+            <div className="similar-blogs mt-4">
+              <h3 className="mb-4">مدونات ذات صلة</h3>
+              {similarBlogs.map((blog) => (
+                <BlogCard
+                  key={blog.id}
+                  blog={blog}
+                  category={
+                    categories.filter(
+                      (category) => category.id === blog.category
+                    )[0]
+                  }
+                />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     )
   );

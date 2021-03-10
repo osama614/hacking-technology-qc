@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Markup } from "interweave";
+import React, { useState, useEffect } from 'react';
+import { Markup } from 'interweave';
 
-import { getPolicyContent } from "../../../api/StaticContentApi";
+import { getPolicyContent } from '../../../api/StaticContentApi';
 
 const PrivacyPolicy = () => {
   const [content, setContent] = useState(null);
@@ -11,8 +11,10 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="privacy-policy">
-      <Markup content={content} />
+    <div className="container home px-0">
+      <div className="privacy-policy">
+        <Markup content={content} />
+      </div>
     </div>
   );
 };

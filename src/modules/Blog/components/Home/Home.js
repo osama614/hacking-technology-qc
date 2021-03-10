@@ -34,32 +34,32 @@ const Home = (props) => {
   }, [dispatch]);
 
   const homeContainer = () => (
-    <>
+    <div className="home">
       {featuredBlogs.length > 0 && <FeaturedBlogs />}
-      {homeAds && homeAds.length > 0 && <AdsBanner />}
-      <BlogsList />
-    </>
+      <div className="container home px-0">
+        {homeAds && homeAds.length > 0 && <AdsBanner />}
+        <BlogsList />
+      </div>
+    </div>
   );
 
   return (
     <div>
       <Navbar currentPathname={props.location.pathname} />
-      <div className="container home px-0">
-        <ScrollToTop />
-        <Switch>
-          <Route path="/notfound" component={NotFound} />
-          <Route exact path="/about-us" component={AboutUs} />
-          <Route exact path="/contact-us" component={ContactUs} />
-          <Route exact path="/privacy-policy" component={PrivacyPolicy} />
-          <Route exact path="/terms-of-use" component={TermsOfUse} />
-          <Route exact path="/tags" component={Tags} />
-          <Route exact path="/tags/:tag" component={ByTagsList} />
-          <Route exact path="/:slug/:id" component={Blog} />
-          <Route exact path="/" component={homeContainer} />
+      <ScrollToTop />
+      <Switch>
+        <Route path="/notfound" component={NotFound} />
+        <Route exact path="/about-us" component={AboutUs} />
+        <Route exact path="/contact-us" component={ContactUs} />
+        <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+        <Route exact path="/terms-of-use" component={TermsOfUse} />
+        <Route exact path="/tags" component={Tags} />
+        <Route exact path="/tags/:tag" component={ByTagsList} />
+        <Route exact path="/:slug/:id" component={Blog} />
+        <Route exact path="/" component={homeContainer} />
 
-          <Redirect to="/notfound" />
-        </Switch>
-      </div>
+        <Redirect to="/notfound" />
+      </Switch>
       <SocialMedia />
       <Footer />
     </div>
