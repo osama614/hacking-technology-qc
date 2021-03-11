@@ -154,6 +154,20 @@ li.media:hover {
   border-radius: 56px;
 }
 
+.media-list {
+  animation: slide-list ease-in-out 0.3s;
+}
+
+@keyframes slide-list {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .featured-blogs,
   .blogs-list {
@@ -163,7 +177,7 @@ li.media:hover {
 
 .blogs-list {
   padding: 36px 53px;
-  margin-top: 50px;
+  margin-top: 5rem;
 }
 
 .carousel-title h2,
@@ -582,6 +596,7 @@ blockquote:nth-of-type(even) footer:after {
   border-radius: 20px;
   color: var(--redDanger);
   width: 60%;
+  margin: 2rem 0;
 }
 
 .blog-recaptcha div,

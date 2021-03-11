@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
 
-import CustomSelect from "../../../../shared/components/FormFields/CustomSelect";
-import BlogCard from "./BlogCard";
-import Pagination from "../layout/Pagination";
+import CustomSelect from '../../../../shared/components/FormFields/CustomSelect';
+import BlogCard from './BlogCard';
+import Pagination from '../layout/Pagination';
 
 const BlogsList = ({ categories, blogsList }) => {
   const perPage = 5;
   const sortOptions = [
-    { id: 0, label: "الأحدث", value: "الأحدث" },
-    { id: 1, label: "الأقدم", value: "الأقدم" },
+    { id: 0, label: 'الأحدث', value: 'الأحدث' },
+    { id: 1, label: 'الأقدم', value: 'الأقدم' },
   ];
   const [categoriesFilters, setCategoriesFilters] = useState([]);
   const [pageCount, setPageCount] = useState(1);
@@ -18,8 +18,8 @@ const BlogsList = ({ categories, blogsList }) => {
   const [currentFilter, setCurrentFilter] = useState(null);
   const [currentSort, setCurrentSort] = useState({
     id: 0,
-    label: "الأحدث",
-    value: "الأحدث",
+    label: 'الأحدث',
+    value: 'الأحدث',
   });
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const BlogsList = ({ categories, blogsList }) => {
   return (
     <div className="blogs-list mb-4">
       <div className="blogs-list-title mb-4 text-center">
-        <h2>{currentFilter ? currentFilter.label : "كل المدونات"}</h2>
+        <h2>{currentFilter ? currentFilter.label : 'كل المدونات'}</h2>
       </div>
       <div className="blogs-list-body row">
         <div className="sidenav col-md-3">
