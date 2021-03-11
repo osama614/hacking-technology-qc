@@ -1,9 +1,27 @@
-import React from "react";
-import { FaTwitterSquare, FaSnapchatSquare, FaYoutube, FaTelegramPlane } from 'react-icons/fa';
+import React, { useRef, useEffect } from 'react';
+import {
+  FaTwitterSquare,
+  FaSnapchatSquare,
+  FaYoutube,
+  FaTelegramPlane,
+} from 'react-icons/fa';
 
 const SocialMedia = () => {
+  const socialMediaList = useRef(null);
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      socialMediaList.current.style.display = 'none';
+      setTimeout(() => {
+        socialMediaList.current.style.display = 'block';
+      }, 3000);
+    });
+  }, []);
+
   return (
-    <ul className="media-list fixed-media li-space-lg p-medium px-2 py-3">
+    <ul
+      ref={socialMediaList}
+      className="media-list fixed-media li-space-lg p-medium px-2 py-3"
+    >
       <li className="media">
         <a href="https://twitter.com/h2ckingtech/">
           <FaTwitterSquare />
