@@ -79,7 +79,7 @@ const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
 
   return (
     blog !== null && (
-      <div className="container home px-0">
+      <div className="container home">
         <div className="container blog-container">
           <div className="title text-center">
             <h2>{blog.title}</h2>

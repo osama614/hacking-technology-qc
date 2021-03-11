@@ -44,7 +44,7 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
 
   return featuredBlogs.length > 0 ? (
     <div className="featured-wrapper">
-      <div className="container home px-0">
+      <div className="container home">
         <div className="featured-blogs carousel slideshow">
           <div className="carousel-title mb-4 text-center">
             <h2>أبرز المدونات</h2>

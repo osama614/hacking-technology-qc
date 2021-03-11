@@ -1,6 +1,6 @@
 const Tags = () => {
   return (
-    <div className="container home px-0">
+    <div className="container home ">
       <div className="about-us">TAGS</div>;
     </div>
   );

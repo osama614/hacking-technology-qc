@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="utl-wrapper">
-      <div className="container home px-0">
+      <div className="container home ">
         <div className="privacy-policy">
           <Markup content={content} />
         </div>

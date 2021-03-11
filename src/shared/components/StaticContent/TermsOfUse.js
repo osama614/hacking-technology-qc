@@ -16,7 +16,7 @@ const TermsOfUse = () => {
 
   return (
     <div className="terms-wrapper">
-      <div className="container home px-0">
+      <div className="container home">
         <div className="terms-of-use">
           <Markup content={content} />
         </div>

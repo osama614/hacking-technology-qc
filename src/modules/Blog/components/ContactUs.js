@@ -113,7 +113,7 @@ class ContactUs extends Component {
   render() {
     return (
       <section className="contact-wrapper">
-        <div className="container home px-0">
+        <div className="container home">
           <div className="contact-us-form col-lg-6">
             <div className="form-row">
               <Input

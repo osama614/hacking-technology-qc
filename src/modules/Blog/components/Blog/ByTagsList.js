@@ -16,7 +16,7 @@ const ByTagsList = ({ categories }) => {
   }, [tag]);
 
   return (
-    <div className="container home px-0">
+    <div className="container home">
       <section className="filtered-by-tag">
         <div className="blogs-list-title mb-4 text-center">
           <h2>
