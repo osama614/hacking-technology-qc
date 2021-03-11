@@ -10,10 +10,10 @@ const SocialMedia = () => {
   const socialMediaList = useRef(null);
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      socialMediaList.current.style.display = 'none';
+      socialMediaList.current.style.display = 'block';
       setTimeout(() => {
-        socialMediaList.current.style.display = 'block';
-      }, 3000);
+        socialMediaList.current.style.display = 'none';
+      }, 6000);
     });
   }, []);
 
