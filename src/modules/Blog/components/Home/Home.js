@@ -36,7 +36,7 @@ const Home = (props) => {
   const homeContainer = () => (
     <div className="home">
       {featuredBlogs.length > 0 && <FeaturedBlogs />}
-      <div className="container home px-0">
+      <div className="container px-0">
         {homeAds && homeAds.length > 0 && <AdsBanner />}
         <BlogsList />
       </div>

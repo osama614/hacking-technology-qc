@@ -112,8 +112,8 @@ class ContactUs extends Component {
 
   render() {
     return (
-      <div className="container home px-0">
-        <section className="contact-wrapper">
+      <section className="contact-wrapper">
+        <div className="container home px-0">
           <div className="contact-us-form col-lg-6">
             <div className="form-row">
               <Input
@@ -210,8 +210,8 @@ class ContactUs extends Component {
               </div>
             )}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     );
   }
 }

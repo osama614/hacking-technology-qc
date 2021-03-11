@@ -142,8 +142,6 @@ li.media:hover {
 }
 
 .featured-wrapper {
-  background: url('./assets/backs/home-cover.jpeg') center/cover;
-  padding-bottom: 2rem;
 }
 
 .featured-blogs {
@@ -154,12 +152,11 @@ li.media:hover {
 .featured-blogs,
 .blogs-list {
   border-radius: 56px;
-  background-color: #00000096;
+  background-color: #313131;
 }
 
 .blogs-list {
   border-radius: 56px;
-  background-color: #313131;
 }
 
 @media screen and (max-width: 450px) {
@@ -407,16 +404,21 @@ pre {
   overflow-wrap: anywhere;
 }
 
+.utl-wrapper {
+  background: url('./assets/backs/utl-cover.jpeg') center/cover;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
 a.privacy-policy-link {
   cursor: pointer;
   text-decoration: none;
 }
 
 .contact-wrapper {
-  height: 100vh;
   padding-top: 2rem;
   background: url('./assets/backs/contact-cover.jpeg') center/cover;
-  border-radius: 1rem;
+  min-height: 120vh;
 }
 
 .contact-us-form {

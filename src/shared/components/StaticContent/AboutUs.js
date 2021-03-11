@@ -11,8 +11,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className="container home px-0">
-      <div className="about-us">{<Markup content={content} />}</div>
+    <div className="utl-wrapper">
+      <div className="container home px-0">
+        <div className="about-us">{<Markup content={content} />}</div>
+      </div>
     </div>
   );
 };

@@ -11,9 +11,11 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-    <div className="container home px-0">
-      <div className="privacy-policy">
-        <Markup content={content} />
+    <div className="utl-wrapper">
+      <div className="container home px-0">
+        <div className="privacy-policy">
+          <Markup content={content} />
+        </div>
       </div>
     </div>
   );

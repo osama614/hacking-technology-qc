@@ -15,9 +15,11 @@ const TermsOfUse = () => {
   }, []);
 
   return (
-    <div className="container home px-0">
-      <div className="terms-of-use">
-        <Markup content={content} />
+    <div className="utl-wrapper">
+      <div className="container home px-0">
+        <div className="terms-of-use">
+          <Markup content={content} />
+        </div>
       </div>
     </div>
   );
