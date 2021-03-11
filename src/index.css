@@ -404,8 +404,20 @@ pre {
   overflow-wrap: anywhere;
 }
 
+section.filtered-by-tag {
+  border-radius: 56px;
+  background-color: #313131 !important;
+  padding: 1rem;
+}
+
 .utl-wrapper {
   background: url('./assets/backs/utl-cover.jpeg') center/cover;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.terms-wrapper {
+  background: url('./assets/backs/terms-cover.jpeg') center/cover;
   min-height: 100vh;
   padding-bottom: 2rem;
 }

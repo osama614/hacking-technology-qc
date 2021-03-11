@@ -17,26 +17,26 @@ const ByTagsList = ({ categories }) => {
 
   return (
     <div className="container home px-0">
-      <div className="filtered-by-tag">
+      <section className="filtered-by-tag">
         <div className="blogs-list-title mb-4 text-center">
           <h2>
-            <bdi>
-              <span style={{ color: '#fff' }}>Other topics about </span>
-              {tag}
-            </bdi>
+            <bdi>{tag}</bdi>
           </h2>
         </div>
-
-        {blogsList.map((blog) => (
-          <BlogCard
-            key={blog.id}
-            blog={blog}
-            category={
-              categories.filter((category) => category.id === blog.category)[0]
-            }
-          />
-        ))}
-      </div>
+        <div className="list">
+          {blogsList.map((blog) => (
+            <BlogCard
+              key={blog.id}
+              blog={blog}
+              category={
+                categories.filter(
+                  (category) => category.id === blog.category
+                )[0]
+              }
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
