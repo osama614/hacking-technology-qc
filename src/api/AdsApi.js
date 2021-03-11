@@ -1,5 +1,5 @@
-import axios from "axios";
-import { apiUrl } from "./Constants";
+import axios from 'axios';
+import { apiUrl } from './Constants';
 
 export const getAllHomeAds = () => axios.get(`${apiUrl}/home_advertisement/`);
 

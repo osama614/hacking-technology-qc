@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect, useRef } from 'react';
+import { connect } from 'react-redux';
 
 const AdsBanner = ({ homeAds }) => {
   const delay = 2500;
@@ -37,19 +37,19 @@ const AdsBanner = ({ homeAds }) => {
   }, [index, homeAds.length]);
 
   return urgentAd ? (
-    <div className="home-ad-container text-center mx-auto">
-      <p className="mb-0">{urgentAd.news}</p>
-    </div>
-  ) : (
-    <div className="home-ad-container text-center mx-auto">
-      <div className="moving-text">
-        <font className="mb-0">
-          {homeAds.map((ad) => (
-            ad.news + ' ✤ '
-          ))}
-          </font>
+    <section style={{ marginTop: '4rem' }}>
+      <div className="home-ad-container text-center mx-auto">
+        <p className="mb-0">{urgentAd.news}</p>
       </div>
-    </div>
+    </section>
+  ) : (
+    <section style={{ marginTop: '4rem' }}>
+      <div className="home-ad-container text-center mx-auto">
+        <div className="moving-text">
+          <font className="mb-0">{homeAds.map((ad) => ad.news + ' ✤ ')}</font>
+        </div>
+      </div>
+    </section>
   );
 };
 
