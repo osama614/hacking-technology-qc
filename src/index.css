@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cairo');
+@import url("https://fonts.googleapis.com/css?family=Cairo");
 
 :root {
   --lightGreen: #08cc96;
@@ -21,7 +21,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -420,13 +420,13 @@ section.filtered-by-tag {
 }
 
 .utl-wrapper {
-  background: url('./assets/backs/utl-cover.jpeg') center/cover;
+  background: url("./assets/backs/utl-cover.svg") center/cover;
   min-height: 100vh;
   padding-bottom: 2rem;
 }
 
 .terms-wrapper {
-  background: url('./assets/backs/terms-cover.jpeg') center/cover;
+  background: url("./assets/backs/terms-cover.svg") center/cover;
   min-height: 100vh;
   padding-bottom: 2rem;
 }
@@ -438,7 +438,7 @@ a.privacy-policy-link {
 
 .contact-wrapper {
   padding-top: 2rem;
-  background: url('./assets/backs/contact-cover.jpeg') center/cover;
+  background: url("./assets/backs/contact-cover.svg") center/cover;
   min-height: 120vh;
 }
 
@@ -486,8 +486,8 @@ blockquote p {
   font-size: 14pt;
   font-style: italic;
   line-height: 1.4;
-  font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif',
-    'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+  font-family: "PT Serif", Cambria, "Hoefler Text", Utopia, "Liberation Serif",
+    "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
 }
 blockquote footer {
   margin-top: 0.5em;
@@ -498,7 +498,7 @@ blockquote footer {
   font-style: italic;
 }
 blockquote footer:before {
-  content: '— ';
+  content: "— ";
 }
 blockquote:nth-of-type(even) {
   text-align: right;
@@ -509,10 +509,10 @@ blockquote:nth-of-type(even) footer {
   text-align: right;
 }
 blockquote:nth-of-type(even) footer:before {
-  content: '';
+  content: "";
 }
 blockquote:nth-of-type(even) footer:after {
-  content: ' —';
+  content: " —";
 }
 
 /* Slideshow */
@@ -589,6 +589,35 @@ blockquote:nth-of-type(even) footer:after {
   color: var(--white);
   width: 80%;
 }
+
+/** Swiper **/
+.swiper-slide {
+  text-align: center;
+  height: 100%;
+  width: 100% !important;
+  padding: 2rem 5.5rem;
+  cursor: pointer;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  height: 30px;
+  width: 30px;
+}
+.swiper-pagination-bullet {
+  background-color: #a1bbac;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #63b788;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #63b788;
+  font-size: 2rem;
+  font-weight: 700;
+  height: 100%;
+}
+
+/** Blog **/
 
 .blog-ad-container {
   padding: 8px 20px;
