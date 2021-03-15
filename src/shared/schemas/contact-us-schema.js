@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
+const emailPattern = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
 export const emailErrorMsg = "يجب إن يكون بريد إلكتروني صالح!";
 export const requiredErrorMsg = "هذا الحقل مطلوب!";
 
