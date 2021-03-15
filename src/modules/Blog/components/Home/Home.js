@@ -34,7 +34,7 @@ const Home = (props) => {
   }, [dispatch]);
 
   const homeContainer = () => (
-    <div className="home">
+    <div className="home blog-wrapper">
       {featuredBlogs.length > 0 && <FeaturedBlogs />}
       <div className="container px-0">
         {homeAds && homeAds.length > 0 && <AdsBanner />}

@@ -419,6 +419,12 @@ section.filtered-by-tag {
   padding: 1rem;
 }
 
+.blog-wrapper {
+  background: url("./assets/backs/terms-cover.svg") center/cover;
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
 .utl-wrapper {
   background: url("./assets/backs/utl-cover.svg") center/cover;
   min-height: 100vh;
@@ -450,8 +456,16 @@ a.privacy-policy-link {
   color: var(--lightGreen);
 }
 
-.contact-us-form input {
+.contact-us-form input,
+.contact-us-form textarea {
   border-color: var(--lightGreen);
+  background: #d8d9dd;
+}
+.contact-us-form input:focus,
+.contact-us-form textarea:focus {
+  background: #dddfe4;
+  border-color: var(--lightGreen);
+  border-width: 2px;
 }
 
 .contact-us-form .btn-success,
@@ -615,6 +629,16 @@ blockquote:nth-of-type(even) footer:after {
   font-size: 2rem;
   font-weight: 700;
   height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper-slide {
+    padding: 2rem;
+  }
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 0;
+  }
 }
 
 /** Blog **/

@@ -6,6 +6,12 @@ import "swiper/css/swiper.css";
 
 const FeaturedBlogs = ({ categories, featuredBlogs }) => {
   const params = {
+    spaceBetween: 10,
+    centeredSlides: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: true
+    },
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
@@ -39,61 +45,6 @@ const FeaturedBlogs = ({ categories, featuredBlogs }) => {
       </div>
     </div>
   ) : null;
-
-  // return featuredBlogs.length > 0 ? (
-  //   <div className="featured-wrapper">
-  //     <div className="container home">
-  //       <div className="featured-blogs carousel slideshow">
-  //         <div className="carousel-title mb-4 text-center">
-  //           <h2>أبرز المدونات</h2>
-  //         </div>
-  //         <div
-  //           className="slideshowSlider"
-  //           style={{ transform: `translate3d(${index * 100}%, 0, 0)` }}
-  //         >
-
-  //           {featuredBlogs.map((currentBlog, index) => (
-  //             <div className="slide carousel-inner" key={index}>
-  //               <BlogCard
-  //                 blog={currentBlog}
-  //                 category={
-  //                   categories.filter(
-  //                     (category) => category.id === currentBlog.category
-  //                   )[0]
-  //                 }
-  //               />
-  //             </div>
-  //           ))}
-  //         </div>
-  //         <button
-  //           onClick={slidePrev}
-  //           className="back-btn slider-arrow"
-  //           disabled={index === 0}
-  //         >
-  //           <FaAngleRight />
-  //         </button>
-  //         <button
-  //           onClick={slideNext}
-  //           className="next-btn slider-arrow"
-  //           disabled={index === featuredBlogs.length - 1}
-  //         >
-  //           <FaAngleLeft />
-  //         </button>
-  //         <div className="slideshowDots">
-  //           {featuredBlogs.map((_, idx) => (
-  //             <div
-  //               key={idx}
-  //               className={`slideshowDot${index === idx ? ' active' : ''}`}
-  //               onClick={() => {
-  //                 setIndex(idx);
-  //               }}
-  //             ></div>
-  //           ))}
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </div>
-  // ) : null;
 };
 
 const mapStateToProps = ({ blogs }) => {
