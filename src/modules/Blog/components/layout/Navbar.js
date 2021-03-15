@@ -9,6 +9,9 @@ const Navbar = ({ currentPathname }) => {
 
   useEffect(() => {
     switch (currentPathname) {
+      case "/blog":
+        setActiveTab("blog");
+        break;
       case "/about-us":
         setActiveTab("about-us");
         break;
@@ -51,7 +54,15 @@ const Navbar = ({ currentPathname }) => {
             id="home"
           >
             <Link className="nav-link" to="/">
-              المدونة <span className="sr-only">(current)</span>
+              الرئيسية <span className="sr-only">(current)</span>
+            </Link>
+          </li>
+          <li
+            className={`nav-item ${activeTab === "blog" ? "active" : ""}`}
+            id="blog"
+          >
+            <Link className="nav-link" to="/blog">
+              المدونة
             </Link>
           </li>
           <li

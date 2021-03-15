@@ -442,6 +442,42 @@ a.privacy-policy-link {
   text-decoration: none;
 }
 
+.main-wrapper {
+  padding-top: 2rem;
+  background: url("./assets/backs/main-cover.svg") center/cover no-repeat;
+  min-height: 98vh;
+  height: 100%;
+  width: auto;
+}
+
+.main-wrapper .title {
+  border-left: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+.anim-typewriter {
+  animation: typewriter 5s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-left-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-left-color: transparent;
+  }
+}
+
 .contact-wrapper {
   padding-top: 2rem;
   background: url("./assets/backs/contact-cover.svg") center/cover;
