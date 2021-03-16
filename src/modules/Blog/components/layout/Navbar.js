@@ -8,19 +8,14 @@ const Navbar = ({ currentPathname }) => {
   const [activeTab, setActiveTab] = useState("home");
 
   useEffect(() => {
-    switch (currentPathname) {
-      case "/blog":
-        setActiveTab("blog");
-        break;
-      case "/about-us":
-        setActiveTab("about-us");
-        break;
-      case "/contact-us":
-        setActiveTab("contact-us");
-        break;
-      default:
-        setActiveTab("home");
-        break;
+    if (currentPathname.includes("/blog")) {
+      return setActiveTab("blog");
+    } else if (currentPathname === "/about-us") {
+      return setActiveTab("about-us");
+    } else if (currentPathname === "/contact-us") {
+      setActiveTab("contact-us");
+    } else {
+      return setActiveTab("home");
     }
   }, [currentPathname]);
 
