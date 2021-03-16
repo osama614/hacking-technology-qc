@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import { Transition } from "react-transition-group";
 import { MainIllust } from "../../../assets";
+import Spinner from "../../../shared/components/Spinner";
 
 const Main = () => {
   const [loaded, setLoaded] = useState(false);
@@ -58,7 +59,9 @@ const Main = () => {
               )}
             </Transition>
           </div>
-        ) : null}
+        ) : (
+          <Spinner></Spinner>
+        )}
       </div>
     </div>
   );
