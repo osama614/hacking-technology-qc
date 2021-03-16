@@ -1,20 +1,60 @@
-import React from "react";
+import React, { useState } from "react";
+import Typewriter from "typewriter-effect";
+import { Transition } from "react-transition-group";
+import { MainIllust } from "../../../assets";
 
 const Main = () => {
+  const [inProp, setInProp] = useState(false);
+  const duration = 800;
+  const translate = "-20%";
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out, transform ${duration}ms ease-in-out`,
+    opacity: 0,
+    transform: `translateY(${translate})`,
+  };
+  const transitionStyles = {
+    entering: { opacity: 1, transform: "translateY(0%)" },
+    entered: { opacity: 1, transform: "translateY(0%)" },
+    exiting: { opacity: 0, transform: `translateY(${translate})` },
+    exited: { opacity: 0, transform: `translateY(${translate})` },
+  };
   return (
-    <div className="home main-wrapper">
-      <div className="row d-flex m-0 w-100 vh-100">
-        <div className="col-12 col-md-6"></div>
-        <div className="col-12 col-md-6 d-flex flex-column text-center justify-content-center align-items-center py-5">
-          <div className="py-4 px-0">
-            <p className="title anim-typewriter display-4">انتظرونا قريبا...</p>
-            <p className="display-4">...Coming Soon</p>
+    <div className="home main-wrapper d-flex">
+      <div className="row d-flex m-0 w-100">
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center p-4 p-md-5">
+          <img src={MainIllust} alt="home" />
+        </div>
+        <div className="col-12 col-md-6 d-flex flex-column text-center justify-content-center align-items-center p-5">
+          <div className="type-writer py-4 px-0">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("انتظرونا قريبا...<br/>")
+                  .typeString("Coming Soon...")
+                  .start()
+                  .callFunction(() => {
+                    setInProp(true);
+                  });
+              }}
+            />
           </div>
-          <p className="h5">
-            نعتذر عن استقبال المثليين وندعم القضية الفلسطينية
-          </p>
-          <p className="h3">We don't serve Homosexual,</p>
-          <p className="h3">We support the Palestinian Cause</p>
+          <Transition in={inProp} timeout={500}>
+            {(state) => (
+              <div
+                style={{
+                  ...defaultStyle,
+                  ...transitionStyles[state],
+                }}
+              >
+                {" "}
+                <p className="h5">
+                  نعتذر عن استقبال المثليين وندعم القضية الفلسطينية
+                </p>
+                <p className="h3">We don't serve Homosexual,</p>
+                <p className="h3">We support the Palestinian Cause</p>
+              </div>
+            )}
+          </Transition>
         </div>
       </div>
     </div>

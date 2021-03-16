@@ -450,31 +450,16 @@ a.privacy-policy-link {
   width: auto;
 }
 
-.main-wrapper .title {
-  border-left: 2px solid rgba(255, 255, 255, 0.75);
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
+.main-wrapper .type-writer {
+  font-size: 3rem;
 }
 
-.anim-typewriter {
-  animation: typewriter 5s steps(44) 1s 1 normal both,
-    blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter {
-  from {
-    width: 0;
+@media only screen and (max-width: 988px) {
+  .main-wrapper .type-writer {
+    font-size: 2rem;
   }
-  to {
-    width: 100%;
-  }
-}
-@keyframes blinkTextCursor {
-  from {
-    border-left-color: rgba(255, 255, 255, 0.75);
-  }
-  to {
-    border-left-color: transparent;
+  .main-wrapper p {
+    font-size: 90%;
   }
 }
 
