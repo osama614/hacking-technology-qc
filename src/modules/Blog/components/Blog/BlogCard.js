@@ -11,7 +11,7 @@ const BlogCard = ({ blog, category }) => {
     <div className="blog-card mb-3" style={{ maxWidth: 1100 }}>
       <div className="row no-gutters">
         <div className="col-md-4">
-          <Link to={`/${blog.slug}/${blog.id}`}>
+          <Link to={`/blog/${blog.slug}/${blog.id}`}>
             <img
               src={blog.cover ? baseUrl + blog.cover : ""}
               className="card-img"
@@ -24,7 +24,7 @@ const BlogCard = ({ blog, category }) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <Link className="blog-card-title" to={`/${blog.slug}/${blog.id}`}>
+            <Link className="blog-card-title" to={`/blog/${blog.slug}/${blog.id}`}>
               <h5 className="card-title">{blog.title}</h5>
             </Link>
             <div className="d-flex w-100 justify-content-between">
@@ -33,7 +33,7 @@ const BlogCard = ({ blog, category }) => {
                   {formatDate(blog.publish)}
                 </small>
               </p>
-              <Link to={`/${blog.slug}/${blog.id}`}>
+              <Link to={`/blog/${blog.slug}/${blog.id}`}>
                 <img
                   src={LeftArrow}
                   height={30}
