@@ -54,7 +54,7 @@ const Main = () => {
                     نعتذر عن استقبال المثليين وندعم القضية الفلسطينية
                   </p>
                   <p className="h3">,We don't serve Homosexuals</p>
-                  <p className="h3">We support the Palestinian Case</p>
+                  <p className="h3">We support the Palestinian Issue</p>
                 </div>
               )}
             </Transition>
