@@ -35,7 +35,6 @@ const Blog = ({ blog, similarBlogs, categories, blogAd, dispatch, match }) => {
         let imageSrc = img.getAttribute("src");
         const srcStart = imageSrc.indexOf("/media");
         imageSrc = imageSrc.slice(srcStart);
-        img.src = blog.cover + imageSrc;
         img.onclick = function () {
           if (img.style.transform === "scale(2)") {
             img.style.transform = "scale(1)";
