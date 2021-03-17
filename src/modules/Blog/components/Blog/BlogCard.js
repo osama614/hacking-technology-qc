@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { baseUrl } from "../../../../api/Constants";
 import { formatDate } from "../../../../shared/utils/helpers";
 
 import { LeftArrow } from "../../../../assets/index";
@@ -13,7 +12,7 @@ const BlogCard = ({ blog, category }) => {
         <div className="col-md-4">
           <Link to={`/blog/${blog.slug}/${blog.id}`}>
             <img
-              src={blog.cover ? baseUrl + blog.cover : ""}
+              src={blog.cover ? blog.cover : ""}
               className="card-img"
               width="348"
               height="100%"
