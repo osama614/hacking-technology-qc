@@ -1,3 +1,3 @@
 //base url
-export const baseUrl = "http://osos.pythonanywhere.com";
-export const apiUrl = "http://osos.pythonanywhere.com/api/v1";
+export const baseUrl = "https://osos.pythonanywhere.com";
+export const apiUrl = "https://osos.pythonanywhere.com/api/v1";
