@@ -22,6 +22,7 @@ const Home = (props) => {
       <Navbar currentPathname={props.location.pathname} />
       <ScrollToTop />
       <Switch>
+        <Route exact path="/notfound" component={NotFound} />
         <Route exact path="/about-us" component={AboutUs} />
         <Route exact path="/contact-us" component={ContactUs} />
         <Route exact path="/privacy-policy" component={PrivacyPolicy} />
@@ -31,7 +32,6 @@ const Home = (props) => {
         <Route exact path="/blog" component={BlogHome} />
         <Route exact path="/blog/:slug/:id" component={Blog} />
         <Route exact path="/" component={Main} />
-        <Route path="/notfound" component={NotFound} />
         <Redirect to="/notfound" />
       </Switch>
       <SocialMedia />
