@@ -7,7 +7,6 @@ import BlogCard from "./BlogCard";
 import AdsBanner from "./AdBanner";
 import SocialIcon from "../../../../shared/components/SocialIcon";
 
-import { baseUrl } from "../../../../api/Constants";
 import { handleGetBlog, handleGetBlogAd } from "../../actions/index";
 import { formatDate } from "../../../../shared/utils/helpers";
 
