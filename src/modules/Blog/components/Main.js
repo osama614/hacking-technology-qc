@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Typewriter from "typewriter-effect";
+import ReactTypingEffect from 'react-typing-effect';
 import { Transition } from "react-transition-group";
 import { MainIllust } from "../../../assets";
 import Spinner from "../../../shared/components/Spinner";
@@ -29,16 +29,26 @@ const Main = () => {
         {loaded ? (
           <div className="col-12 col-md-6 d-flex flex-column text-center justify-content-center align-items-center p-5">
             <div className="type-writer py-4 px-0">
-              <Typewriter
-                onInit={(typewriter) => {
-                  typewriter
-                    .typeString("انتظرونا قريبا...<br/>")
-                    .typeString("Coming Soon...")
-                    .start()
-                    .callFunction(() => {
-                      setInProp(true);
-                    });
+              <ReactTypingEffect
+                text={["أنتظرونا قريبًا...", "Coming Soon..."]}
+                cursorRenderer={cursor => <h1>{cursor}</h1>}
+                displayTextRenderer={(text, i) => {
+                  return (
+                    <h1>
+                      {text.split('').map((char, i) => {
+                        const key = `${i}`;
+                        return (
+                          <span
+                            key={key}
+                          >{char}</span>
+                        );
+                      })}
+                    </h1>
+                  );
+                  setInProp(true);
                 }}
+                speed={200}
+                typingDelay={200}
               />
             </div>
             <Transition in={inProp} timeout={500}>
